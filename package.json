@@ -6,14 +6,35 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^8",
+    "@sap/cds": "^8.2.2",
+    "@sap/eslint-plugin-ui5-jsdocs": "^2.0.5",
+    "@sap/hana-client": "^2.21.31",
+    "@sapui5/ts-types": "^1.92.2",
+    "eslint": "^7.32.0",
     "express": "^4"
   },
   "devDependencies": {
+    "@cap-js/cds-types": "^0.6",
     "@cap-js/sqlite": "^1",
-    "@cap-js/cds-types": "^0.6"
+    "@sap/cds-dk": "^8.2.1",
+    "@sap/ux-specification": "UI5-1.128"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-listreportpage": "cds watch --open listreportpage/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-clientestopropiedades": "cds watch --open clientestopropiedades/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "sapux": [
+    "app/project1",
+    "app/listreportpage",
+    "app/clientestopropiedades"
+  ],
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
+    }
   }
 }
